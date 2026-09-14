@@ -5,15 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andrzej Maciej Kaszek</title>
     <style>
-        body { font-family: Montserrat extrabold, sans-serif; text-align: center; background-color: #f4f4f9; padding: 50px; }
-        h1 { color: #ffc800; }
-        p { color: #000673; font-size: 18px; }
-		p2 { color: #000673; font-size: 32px; }
+        body { font-family: 'Montserrat', sans-serif; text-align: center; background-color: #f4f4f9; padding: 50px 20px; margin: 0; }
+        h1 { color: #ffc800; font-weight: 800; margin-bottom: 10px; }
+        p { color: #000673; font-size: 18px; margin-bottom: 5px; }
+        h2 { color: #000673; font-size: 48px; font-weight: 800; margin-top: 10px; margin-bottom: 40px; }
+        .galeria { display: flex; justify-content: center; gap: 20px; max-width: 1200px; margin: 0 auto; }
+        .foto-box { flex: 1; max-width: 350px; height: auto; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        .foto-box:hover { transform: translateY(-5px); }
+        @media (max-width: 768px) { .galeria { flex-direction: column; align-items: center; } .foto-box { width: 100%; } }
     </style>
 </head>
 <body>
+
     <h1>Andrzej Maciej Kaszek - Oficjalna strona.</h1>
     <p>Kontakt: andrzejkaszek@icloud.com</p>
-	<p2>Ku wolności!<p2>
+    <h2>Ku wolności!</h2>
+
+    <div class="galeria">
+        <img src="zdjecie1.jpg" alt="Zdjęcie 1" class="foto-box">
+        <img src="zdjecie2.jpg" alt="Zdjęcie 2" class="foto-box">
+        <img src="zdjecie3.jpg" alt="Zdjęcie 3" class="foto-box">
+    </div>
+
 </body>
 </html>
