@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Andrzej Maciej Kaszek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <button class="menu-btn" type="button" aria-controls="zakladki">Zakładki</button>
+  <div class="overlay"></div>
+  <nav id="zakladki" class="drawer" aria-label="Menu zakładek">
+    <div class="drawer-top">
+      <p class="drawer-brand">Andrzej Maciej Kaszek</p>
+      <button class="close-btn" type="button" aria-label="Zamknij">×</button>
+    </div>
+    <ul>
+      <li><a class="active" href="index.html">Strona główna</a></li>
+      <li><a href="media.html">Dla mediów</a></li>
+      <li><a href="kontakt.html">Kontakt</a></li>
+      <li><a href="projekty.html">Projekty</a></li>
+    </ul>
+    <p class="drawer-tag">Ku wolności!</p>
+  </nav>
+
+  <main>
+    <div class="wrap hero">
+      <img class="hero-photo" src="media/hero.jpg" alt="Zdjęcie główne">
+      <div>
+        <p class="kicker">Oficjalna strona</p>
+        <h1>Andrzej Maciej Kaszek</h1>
+        <p class="tagline">Ku wolności!</p>
+        <p class="lead">Jestem młodym działaczem Młodych dla Wolności w Kutnie. Działam dla was!</p>
+      </div>
+    </div>
+  </main>
+  <script src="js/menu.js"></script>
+</body>
+</html>

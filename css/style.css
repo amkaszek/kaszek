@@ -1,0 +1,214 @@
+:root {
+  --paper: #f1eee6;
+  --ink: #0b1450;
+  --ink-soft: #24306a;
+  --gold: #d4a017;
+  --gold-bright: #f0c44a;
+  --muted: #5b6284;
+  --line: #d7d2c6;
+  --surface: #fbfaf6;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button { cursor: pointer; font-family: inherit; }
+
+.menu-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.6rem 0.9rem;
+  border: 0;
+  border-radius: 12px;
+  background: var(--ink);
+  color: var(--gold-bright);
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 24px rgba(11, 20, 80, 0.25);
+}
+
+.menu-btn.hidden { opacity: 0; pointer-events: none; }
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(11, 20, 80, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.open { opacity: 1; pointer-events: auto; }
+
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  width: min(100%, 22rem);
+  padding: 2rem 1.75rem;
+  background: var(--ink);
+  color: var(--paper);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.drawer.open { transform: translateX(0); }
+
+.drawer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2.5rem;
+}
+
+.drawer-brand {
+  max-width: 12rem;
+  margin: 0;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.close-btn {
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--paper);
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.drawer ul { list-style: none; margin: 0; padding: 0; }
+.drawer a {
+  display: block;
+  padding: 0.75rem 0;
+  color: var(--paper);
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+.drawer a.active, .drawer a:hover { color: var(--gold-bright); }
+.drawer-tag { margin-top: auto; color: var(--gold); font-weight: 600; }
+
+main { min-height: 100dvh; padding: 5rem 1.5rem 3rem; }
+.wrap { max-width: 72rem; margin: 0 auto; }
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero img, .photo {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(11, 20, 80, 0.12);
+}
+
+.hero-photo { aspect-ratio: 3 / 4; max-height: 78vh; }
+
+.kicker {
+  margin: 0 0 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.tagline {
+  margin: 1rem 0 0;
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.lead, .muted {
+  margin-top: 2rem;
+  max-width: 36rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+h2 { font-size: 1.6rem; font-weight: 800; }
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+.photo { aspect-ratio: 4 / 3; }
+
+.contact-box {
+  margin-top: 1rem;
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.contact-box a, .mail {
+  display: inline-block;
+  margin-top: 1.25rem;
+  color: var(--gold-bright);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.mail.btn {
+  background: var(--ink);
+  color: var(--gold-bright);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+}
+
+.card {
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+}
+
+.section { margin-bottom: 3.5rem; }
+
+@media (min-width: 900px) {
+  .hero { grid-template-columns: 1.05fr 1fr; gap: 3.5rem; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  main { padding-left: 3rem; padding-right: 3rem; }
+}
